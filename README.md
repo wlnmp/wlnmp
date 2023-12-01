@@ -7,6 +7,10 @@ wlnmp一键安装包基于上游开源软件二次开发，可以在Linux系统�
 - 自动识别当前系统以及版本
 - 自动安装对应的WLNMP源
 
+## wlnmp.sh脚本安装
+
+- curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
+
 ## 支持的Linux系统
 
 - Alibaba CloudLinux 2.1903
