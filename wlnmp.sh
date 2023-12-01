@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author: WuHao
-# Version: 2.0
+# Version: 2.0.0
 # Date: 2023-12-01
 # Website: https://www.wlnmp.com/
 
