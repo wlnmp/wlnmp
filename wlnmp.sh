@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Author: WuHao
+# Version: 2.0
+# Date: 2023-12-01
+# Website: https://www.wlnmp.com/
+
 # Function to display an error message and exit
 function display_error() {
 	echo "Error: $1" >&2
