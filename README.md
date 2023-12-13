@@ -12,6 +12,10 @@ wlnmp一键安装包基于上游开源软件二次开发，可以在Linux系统�
 ```bash
 curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 ```
+## 微信关注不迷路
+
+![image](https://github.com/wlnmp/wlnmp/assets/46343402/0a019528-65e5-4677-8083-1a560afc1d29)
+
 
 ## 支持的Linux系统
 
