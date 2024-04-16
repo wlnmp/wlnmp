@@ -27,8 +27,8 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 - CentOS7.x
 - CentOS8.x
 - OpenCloudOS8.x
-- OpenEuler20.03
-- OpenEuler22.03
+- OpenEuler20.03(SP1~SP4)
+- OpenEuler22.03(SP1~SP3)
 - RockyLinux8.x
 
 
