@@ -23,7 +23,7 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 - Alibaba CloudLinux 3
 - AlmaLinux8.x
 - AnolisOS8.x
-- CentOS6.x（停止维护）
+- CentOS6.x(停止维护)
 - CentOS7.x
 - CentOS8.x
 - OpenCloudOS8.x
