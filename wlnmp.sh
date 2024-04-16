@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Author: WuHao
-# Version: 2.0.0
-# Date: 2023-12-01
+# Version: 2.0.1
+# Date: 2024-04-16
 # Website: https://www.wlnmp.com/
 
 # Function to display an error message and exit
@@ -120,6 +120,44 @@ function install_wlnmp_AlmaLinux_OS_8_repository() {
 
 	if sudo rpm -ivh "$repo_url"; then
 		echo "WLNMP AlmaLinux OS 8 repository installed successfully!"
+	else
+		display_error "Installation failed. Please check your network and retry."
+	fi
+}
+
+# Function to install WLNMP repository based on AlmaLinux OS 9 version
+function install_wlnmp_AlmaLinux_OS_9_repository() {
+
+	wlnmp_package="wlnmp-release-almalinux"
+	repo_file="/etc/yum.repos.d/wlnmp-release-almalinux.repo"
+	repo_url="https://mirrors.wlnmp.com/almalinux/wlnmp-release-almalinux-9.noarch.rpm"
+
+	# Check if wlnmp-release-almalinux package is installed
+	if rpm -q "$wlnmp_package" >/dev/null; then
+		echo "$wlnmp_package package is already installed."
+
+		# Check if wlnmp-release-almalinux.repo file exists
+		if [ -e "$repo_file" ]; then
+			echo "$repo_file exists. Skipping installation."
+			return
+		else
+			echo "$repo_file does not exist. Uninstalling $wlnmp_package."
+			sudo rpm -e $wlnmp_package 2>/dev/null
+		fi
+	fi
+
+	printf "Detected AlmaLinux OS 9. Installing WLNMP AlmaLinux OS 9 repository"
+
+	# Simulate waiting with dots
+	for i in {1..6}; do
+		printf "."
+		sleep 1
+	done
+
+	printf "\n"
+
+	if sudo rpm -ivh "$repo_url"; then
+		echo "WLNMP AlmaLinux OS 9 repository installed successfully!"
 	else
 		display_error "Installation failed. Please check your network and retry."
 	fi
@@ -448,6 +486,9 @@ function check_and_install_repository() {
 			;;
 		"almalinux 8")
 			install_wlnmp_AlmaLinux_OS_8_repository
+			;;
+		"almalinux 9")
+			install_wlnmp_AlmaLinux_OS_9_repository
 			;;
 		"openEuler 20")
 			if [ "$VERSION_ID" = "20.03" ]; then
