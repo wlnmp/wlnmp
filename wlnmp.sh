@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Author: WuHao
-# Version: 2.0.1
-# Date: 2024-04-16
+# Version: 2.0.2
+# Date: 2024-04-30
 # Website: https://www.wlnmp.com/
 
 # Function to display an error message and exit
@@ -82,6 +82,44 @@ function install_wlnmp_Rocky_Linux_8_repository() {
 		
 	if sudo rpm -ivh "$repo_url"; then
 		echo "WLNMP Rocky Linux OS 8 repository installed successfully!"
+	else
+		display_error "Installation failed. Please check your network and retry."
+	fi
+}
+
+# Function to install WLNMP repository based on Rocky Linux 9 version
+function install_wlnmp_Rocky_Linux_9_repository() {
+
+	wlnmp_package="wlnmp-release-rockylinux-9"
+	repo_file="/etc/yum.repos.d/wlnmp-release-rockylinux.repo"
+	repo_url="https://mirrors.wlnmp.com/rockylinux/wlnmp-release-rockylinux-9.noarch.rpm"
+
+	# Check if wlnmp-release-rocky package is installed
+	if rpm -q "$wlnmp_package" >/dev/null; then
+		echo "$wlnmp_package package is already installed."
+
+		# Check if wlnmp-release-rockylinux.repo file exists
+		if [ -e "$repo_file" ]; then
+			echo "$repo_file exists. Skipping installation."
+			return
+		else
+			echo "$repo_file does not exist. Uninstalling $wlnmp_package."
+			sudo rpm -e $wlnmp_package 2>/dev/null
+		fi
+	fi
+
+	printf "Detected Rocky Linux OS 9. Installing WLNMP Rocky Linux OS 9 repository"
+
+	# Simulate waiting with dots
+	for i in {1..6}; do
+		printf "."
+		sleep 1
+	done
+
+	printf "\n"
+		
+	if sudo rpm -ivh "$repo_url"; then
+		echo "WLNMP Rocky Linux OS 9 repository installed successfully!"
 	else
 		display_error "Installation failed. Please check your network and retry."
 	fi
@@ -483,6 +521,9 @@ function check_and_install_repository() {
 			;;
 		"rocky 8")
 			install_wlnmp_Rocky_Linux_8_repository
+			;;
+		"rocky 9")
+			install_wlnmp_Rocky_Linux_9_repository
 			;;
 		"almalinux 8")
 			install_wlnmp_AlmaLinux_OS_8_repository
