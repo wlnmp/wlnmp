@@ -1,6 +1,6 @@
 # WLNMP - 一键安装包
 
-wlnmp一键安装包基于上游开源软件二次开发，可以在x86_64架构的Linux系统上通过wlnmp提供的镜像源，快速部署Nginx/Mysql/PHP等常用软件，支持php、MySQL多个版本在同一系统中并存。
+WLNMP一键安装包是基于上游开源软件的二次开发，提供了支持x86_64架构的Linux系统的镜像源。通过添加WLNMP提供的镜像源，可以使用yum/dnf快速部署Nginx、MySQL、PHP等常用软件，并且支持PHP、MySQL多个版本在同一系统中并存。
 
 ## wlnmp.sh脚本
 
@@ -25,7 +25,7 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 - CentOS 6.x(停止维护)
 - CentOS 7.x
 - CentOS 8.x
-- OpenCloudOS 8.x
+- OpenCloudOS 8.x/9.x
 - OpenEuler 20.03(SP1~SP4)
 - OpenEuler 22.03(SP1~SP3)
 - RockyLinux 8.x/9.x

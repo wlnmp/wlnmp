@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Author: WuHao
-# Version: 2.0.2
-# Date: 2024-04-30
+# Version: 2.0.3
+# Date: 2024-06-13
 # Website: https://www.wlnmp.com/
 
 # Function to display an error message and exit
@@ -315,6 +315,44 @@ function install_wlnmp_opencloudos_8_repository() {
 	fi
 }
 
+# Function to install WLNMP repository based on opencloudos 9 version
+function install_wlnmp_opencloudos_9_repository() {
+
+	wlnmp_package="wlnmp-release-opencloudos"
+	repo_file="/etc/yum.repos.d/wlnmp-release-opencloudos.repo"
+	repo_url="https://mirrors.wlnmp.com/opencloudos/wlnmp-release-opencloudos-9.noarch.rpm"
+
+	# Check if wlnmp-release-opencloudos package is installed
+	if rpm -q "$wlnmp_package" >/dev/null; then
+		echo "$wlnmp_package package is already installed."
+
+		# Check if wlnmp-release-opencloudos.repo file exists
+		if [ -e "$repo_file" ]; then
+			echo "$repo_file exists. Skipping installation."
+			return
+		else
+			echo "$repo_file does not exist. Uninstalling $wlnmp_package."
+			sudo rpm -e $wlnmp_package 2>/dev/null
+		fi
+	fi
+
+	printf "Detected opencloudos 9. Installing WLNMP opencloudos 9 repository"
+
+	# Simulate waiting with dots
+	for i in {1..6}; do
+		printf "."
+		sleep 1
+	done
+
+	printf "\n"
+
+	if sudo rpm -ivh "$repo_url"; then
+		echo "WLNMP opencloudos 9 repository installed successfully!"
+	else
+		display_error "Installation failed. Please check your network and retry."
+	fi
+}
+
 # Function to install WLNMP repository based on Alibaba Cloud Linux 3 version
 function install_wlnmp_Alibaba_Cloud_Linux_3_repository() {
 
@@ -561,6 +599,9 @@ function check_and_install_repository() {
 			;;
 		"opencloudos 8")
 			install_wlnmp_opencloudos_8_repository
+			;;
+		"opencloudos 9")
+			install_wlnmp_opencloudos_9_repository
 			;;
 		"centos 6")
 			install_wlnmp_centos_6_repository
