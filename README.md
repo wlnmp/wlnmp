@@ -28,6 +28,7 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 - OpenCloudOS 8.x/9.x
 - OpenEuler 20.03(SP1~SP4)
 - OpenEuler 22.03(SP1~SP3)
+- OpenEuler 24.03
 - RockyLinux 8.x/9.x
 
 

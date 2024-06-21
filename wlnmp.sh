@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Author: WuHao
-# Version: 2.0.3
-# Date: 2024-06-13
+# Version: 2.0.4
+# Date: 2024-06-21
 # Website: https://www.wlnmp.com/
 
 # Function to display an error message and exit
@@ -272,6 +272,44 @@ function install_wlnmp_openEuler_OS_22_03_repository() {
 
 	if sudo rpm -ivh "$repo_url"; then
 		echo "WLNMP openEuler OS 22.03 repository installed successfully!"
+	else
+		display_error "Installation failed. Please check your network and retry."
+	fi
+}
+
+# Function to install WLNMP repository based on openEuler OS 24.03 version
+function install_wlnmp_openEuler_OS_24_03_repository() {
+
+	wlnmp_package="wlnmp-release-openeuler-24"
+	repo_file="/etc/yum.repos.d/wlnmp-release-openeuler.repo"
+	repo_url="https://mirrors.wlnmp.com/openeuler/wlnmp-release-openeuler-24.noarch.rpm"
+
+	# Check if wlnmp-release-openeuler package is installed
+	if rpm -q "$wlnmp_package" >/dev/null; then
+		echo "$wlnmp_package package is already installed."
+
+		# Check if wlnmp-release-openeuler.repo file exists
+		if [ -e "$repo_file" ]; then
+			echo "$repo_file exists. Skipping installation."
+			return
+		else
+			echo "$repo_file does not exist. Uninstalling $wlnmp_package."
+			sudo rpm -e $wlnmp_package 2>/dev/null
+		fi
+	fi
+
+	printf "Detected openEuler OS 24.03. Installing WLNMP openEuler OS 24.03 repository"
+
+	# Simulate waiting with dots
+	for i in {1..6}; do
+		printf "."
+		sleep 1
+	done
+
+	printf "\n"
+
+	if sudo rpm -ivh "$repo_url"; then
+		echo "WLNMP openEuler OS 24.03 repository installed successfully!"
 	else
 		display_error "Installation failed. Please check your network and retry."
 	fi
@@ -579,6 +617,13 @@ function check_and_install_repository() {
 		"openEuler 22")
 			if [ "$VERSION_ID" = "22.03" ]; then
 				install_wlnmp_openEuler_OS_22_03_repository
+			else
+				echo "Current openEuler version is not supported. Please contact wlnmp.com for feedback."
+			fi
+			;;
+		"openEuler 24")
+			if [ "$VERSION_ID" = "24.03" ]; then
+				install_wlnmp_openEuler_OS_24_03_repository
 			else
 				echo "Current openEuler version is not supported. Please contact wlnmp.com for feedback."
 			fi
