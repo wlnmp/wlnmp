@@ -57,16 +57,27 @@ rpm -ivh https://mirrors.wlnmp.com/centos/wlnmp-release-centos.noarch.rpm
 > RockyLinux8系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/rockylinux/wlnmp-release-rocky-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/rockylinux/wlnmp-release-rocky-8.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 > RockyLinux9系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/rockylinux/wlnmp-release-rockylinux-noarch.rpm
 ```
 
 > openeuler20.03(SP1~SP4)/openeuler22.03(SP1~SP3)系统添加WLNMP一键安装包源
+=======
+rpm -ivh https://mirrors.wlnmp.com/rockylinux/wlnmp-release-rockylinux-9.noarch.rpm
+```
+
+openeuler20.03(SP1-SP4)/openeuler22.03(SP1-SP3)系统添加WLNMP一键安装包源
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 
 ```
 rpm -ivh https://mirrors.wlnmp.com/openeuler/wlnmp-release-openeuler.noarch.rpm
@@ -75,25 +86,41 @@ rpm -ivh https://mirrors.wlnmp.com/openeuler/wlnmp-release-openeuler.noarch.rpm
 > openeuler24.03系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/openeuler/wlnmp-release-openeuler-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/openeuler/wlnmp-release-openeuler-24.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 > AlmaLinux8系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/almalinux/wlnmp-release-almalinux-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/almalinux/wlnmp-release-almalinux-8.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 > AlmaLinux9系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/almalinux/wlnmp-release-almalinux-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/almalinux/wlnmp-release-almalinux-9.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 > AnolisOS8系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/anolisos/wlnmp-release-anolisos-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/anolisos/wlnmp-release-anolisos-8.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 > Alibaba CloudLinux 2.1903/3系统添加WLNMP一键安装包源
@@ -105,13 +132,21 @@ rpm -ivh https://mirrors.wlnmp.com/alinux/wlnmp-release-alinux.noarch.rpm
 > OpenCloudOS8系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/opencloudos/wlnmp-release-opencloudos-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/opencloudos/wlnmp-release-opencloudos-8.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 > OpenCloudOS9系统添加WLNMP一键安装包源
 
 ```
+<<<<<<< HEAD
 rpm -ivh https://mirrors.wlnmp.com/opencloudos/wlnmp-release-opencloudos-noarch.rpm
+=======
+rpm -ivh https://mirrors.wlnmp.com/opencloudos/wlnmp-release-opencloudos-9.noarch.rpm
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 * * *
@@ -120,7 +155,7 @@ rpm -ivh https://mirrors.wlnmp.com/opencloudos/wlnmp-release-opencloudos-noarch.
 
 > 所有同类型软件，只能存在一个版本。但是php、MySQL、MariaDB可多版本并存，请看第四节教程
 
-> `注意：`如果在安装时报错，请先清理源的缓存，例如yum clean all、dnf clean all、rm -rf /var/cache/dnf/、rm -rf /var/cache/yum/。
+> 注意：如果在安装时报错，请先清理源的缓存，例如yum clean all、dnf clean all、rm -rf /var/cache/dnf/、rm -rf /var/cache/yum/。
 
 > 安装Nginx/Tengine/openresty
 
@@ -224,6 +259,7 @@ mysql> exit
 > 如果使用了多版本的php，想使用哪个php，则取消哪个php注释即可，多个.conf文件或server字段，可使用不同的php版本。
 
 ```
+<<<<<<< HEAD
 #include enable-phpconf;
 #include enable-phpconf;
 #include enable-phpconf;
@@ -234,6 +270,18 @@ mysql> exit
 #include enable-phpconf;
 #include enable-phpconf;
 #include enable-phpconf;
+=======
+#include enable-php56.conf;
+#include enable-php70.conf;
+#include enable-php71.conf;
+#include enable-php72.conf;
+#include enable-php73.conf;
+#include enable-php74.conf;
+#include enable-php8.conf;
+#include enable-php81.conf;
+#include enable-php82.conf;
+#include enable-php83.conf;
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 
 * * *
@@ -281,7 +329,10 @@ yum install wcmariadb1011
 ```
 /etc/init.d/SOFT start/stop/restart/status
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 systemctl start/stop/restart/status SOFT
 ```
@@ -291,7 +342,10 @@ systemctl start/stop/restart/status SOFT
 ```
 /etc/init.d/nginx start
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 systemctl start nginx
 ```
@@ -301,15 +355,24 @@ systemctl start nginx
 ```
 /etc/init.d/nginx stop
 ```
+<<<<<<< HEAD
 
 `systemctl stop nginx`
+=======
+```
+systemctl stop nginx
+```
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 
 > 例：查看nginx状态
 
 ```
 /etc/init.d/nginx status
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
 ```
 systemctl status nginx
 ```
@@ -341,4 +404,8 @@ yum update wnginxx
 
 > `更多使用详解见：`https://www.wlnmp.com/post-2034.html
 
+<<<<<<< HEAD
 > 使用过程中如果有什么意见或建议，可微信搜索吴昊博客公众号关注留言获取微信群，或加QQ群反馈：$$
+=======
+使用过程中如果有什么意见或建议，可微信搜索“吴昊博客”公众号关注留言获取微信群，或加QQ群反馈：[![$$](//pub.idqqimg.com/wpa/images/group.png "$$")](//shang.qq.com/wpa/qunwpa?idkey=0ad483ff270a2415d7c7af116724fa0338302e10f61882b359156a7358fd362d)
+>>>>>>> d1f4a535772a54fbd5b692c76b631d137e78fda3
