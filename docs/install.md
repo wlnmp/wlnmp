@@ -12,7 +12,7 @@
 yum install epel-release
 ```
 
-*   如果你是OpenEuler 20.03(SP1~SP4)、OpenEuler 22.03(SP1~SP3)系统可以通过以下命令安装epel源（注：OpenEuler24.03 无需添加epel源，直接添加wlnmp源即可使用）。
+*   如果你是OpenEuler 20.03(SP1-SP4)、OpenEuler 22.03(SP1-SP3)系统可以通过以下命令安装epel源（注：OpenEuler24.03 无需添加epel源，直接添加wlnmp源即可使用）。
 
 ```
 curl -o /etc/yum.repos.d/epel-OpenEuler.repo https://down.whsir.com/downloads/epel-OpenEuler.repo
@@ -66,7 +66,7 @@ RockyLinux9系统添加WLNMP一键安装包源
 rpm -ivh https://mirrors.wlnmp.com/rockylinux/wlnmp-release-rockylinux-9.noarch.rpm
 ```
 
-openeuler20.03(SP1~SP4)/openeuler22.03(SP1~SP3)系统添加WLNMP一键安装包源
+openeuler20.03(SP1-SP4)/openeuler22.03(SP1-SP3)系统添加WLNMP一键安装包源
 
 ```
 rpm -ivh https://mirrors.wlnmp.com/openeuler/wlnmp-release-openeuler.noarch.rpm
