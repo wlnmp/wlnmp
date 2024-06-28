@@ -1,11 +1,11 @@
 # WLNMP - 一键安装包
 
-WLNMP一键安装包是基于上游开源软件的二次开发，提供了支持x86_64架构的Linux系统的镜像源。通过添加WLNMP提供的镜像源，可以使用yum/dnf快速部署Nginx、MySQL、PHP等常用软件，并且支持PHP、MySQL多个版本在同一系统中并存。
+WLNMP一键安装包是基于上游开源软件的二次开发，提供了支持x86_64、AArch64架构的Linux系统镜像源。通过添加WLNMP提供的镜像源，可以使用yum/dnf快速部署Nginx、MySQL、PHP等常用软件，并且支持PHP、MySQL多个版本在同一系统中并存。
 
 ## wlnmp.sh脚本
 
 - 自动识别当前系统以及版本
-- 自动安装对应的WLNMP源
+- 自动安装对应系统的WLNMP源
 
 ## wlnmp.sh脚本安装
 
@@ -17,7 +17,7 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 ![image](https://github.com/wlnmp/wlnmp/assets/46343402/0a019528-65e5-4677-8083-1a560afc1d29)
 
 
-## 支持的Linux系统
+## 支持的Linux x86_64系统
 
 - Alibaba CloudLinux 2.1903/3
 - AlmaLinux 8.x/9.x
@@ -29,6 +29,11 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 - OpenEuler 20.03(SP1~SP4)
 - OpenEuler 22.03(SP1~SP3)
 - OpenEuler 24.03
+- RockyLinux 8.x/9.x
+
+## 支持的Linux aarch64系统
+
+- AnolisOS 8.x
 - RockyLinux 8.x/9.x
 
 
