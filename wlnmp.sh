@@ -1,14 +1,52 @@
 #!/bin/bash
 
 # Author: WuHao
-# Version: 2.0.4
-# Date: 2024-06-21
+# Version: 2.0.5
+# Date: 2024-07-08
 # Website: https://www.wlnmp.com/
 
 # Function to display an error message and exit
 function display_error() {
 	echo "Error: $1" >&2
 	exit 1
+}
+
+# Function to install WLNMP repository based on Anolis OS 7 version
+function install_wlnmp_Anolis_OS_7_repository() {
+
+	wlnmp_package="wlnmp-release-anolisos"
+	repo_file="/etc/yum.repos.d/wlnmp-release-anolisos.repo"
+	repo_url="https://mirrors.wlnmp.com/anolisos/wlnmp-release-anolisos-7.noarch.rpm"
+
+	# Check if wlnmp-release-anolis package is installed
+	if rpm -q "$wlnmp_package" >/dev/null; then
+		echo "$wlnmp_package package is already installed."
+
+		# Check if wlnmp-release-anolis.repo file exists
+		if [ -e "$repo_file" ]; then
+			echo "$repo_file exists. Skipping installation."
+			return
+		else
+			echo "$repo_file does not exist. Uninstalling $wlnmp_package."
+			sudo rpm -e $wlnmp_package 2>/dev/null
+		fi
+	fi
+
+	printf "Detected Anolis OS 7. Installing WLNMP Anolis OS 7 repository"
+
+	# Simulate waiting with dots
+	for i in {1..6}; do
+		printf "."
+		sleep 1
+	done
+
+	printf "\n"
+
+	if sudo rpm -ivh "$repo_url"; then
+		echo "WLNMP Anolis OS 7 repository installed successfully!"
+	else
+		display_error "Installation failed. Please check your network and retry."
+	fi
 }
 
 # Function to install WLNMP repository based on Anolis OS 8 version
@@ -592,6 +630,9 @@ function check_and_install_repository() {
 
 		# Check if the ID variable contains OS
 		case "$ID $major_version" in
+		"anolis 7")
+			install_wlnmp_Anolis_OS_7_repository
+			;;
 		"anolis 8")
 			install_wlnmp_Anolis_OS_8_repository
 			;;
