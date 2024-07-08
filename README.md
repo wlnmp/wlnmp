@@ -21,7 +21,7 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 
 - Alibaba CloudLinux 2.1903/3
 - AlmaLinux 8.x/9.x
-- AnolisOS 8.x
+- AnolisOS 7.x/8.x
 - CentOS 6.x(停止维护)
 - CentOS 7.x
 - CentOS 8.x
@@ -33,7 +33,11 @@ curl -fsSL "https://sh.wlnmp.com/wlnmp.sh" | bash
 
 ## 支持的Linux aarch64系统
 
-- AnolisOS 8.x
-- RockyLinux 8.x/9.x
+- Alibaba CloudLinux 2.1903/3
+- AnolisOS 7.x/8.x
+- CentOS 7.x
+- OpenCloudOS 8.x/9.x
+- OpenEuler 20.03(SP1~SP4)
+- OpenEuler 22.03(SP1~SP3)
 
 
