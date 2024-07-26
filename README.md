@@ -17,7 +17,7 @@ WLNMP一键安装包是基于上游开源软件的二次开发，提供了支持
 yum install epel-release
 ```
 
-如果你是OpenEuler 20.03(SP1~SP4)、OpenEuler 22.03(SP1~SP3)系统可以通过以下命令安装epel源（注：OpenEuler24.03 无需添加epel源，直接添加wlnmp源即可使用）。
+如果你是OpenEuler 20.03(SP1-SP4)、OpenEuler 22.03(SP1~SP3)系统可以通过以下命令安装epel源（注：OpenEuler24.03 无需添加epel源，直接添加wlnmp源即可使用）。
 
 ```bash
 curl -o /etc/yum.repos.d/epel-OpenEuler.repo https://down.whsir.com/downloads/epel-OpenEuler.repo
