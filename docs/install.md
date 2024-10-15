@@ -196,10 +196,10 @@ MySQL8.0密码修改（注意MySQL8.0修改密码方式不同）
 
 ```
 mysql -uroot -p
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'whsir';
+mysql> ALTER USER 'root'@'127.0.0.1' IDENTIFIED BY 'whsir';
 ```
 
-注意：默认MySQL安装完成后，只允许localhost即本机访问，如果需要所有IP都具有访问权限请执行以下命令
+注意：默认MySQL安装完成后，只允许127.0.0.1即本机访问，如果需要所有IP都具有访问权限请执行以下命令
 
 MySQL5.5、MySQL5.6、MySQL5.7、mariadb10.4、mariadb10.5、mariadb10.6、mariadb10.11修改root密码并允许所有IP访问，可以使用以下方法，这里的whsir为你要修改的密码
 
